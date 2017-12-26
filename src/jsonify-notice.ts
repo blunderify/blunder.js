@@ -1,6 +1,5 @@
 import Notice from './notice';
 
-
 // jsonifyNotice serializes notice to JSON and truncates params,
 // environment and session keys.
 export default function jsonifyNotice(notice: Notice, maxLength = 64000): string {
