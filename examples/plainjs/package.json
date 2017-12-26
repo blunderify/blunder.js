@@ -1,0 +1,6 @@
+{
+  "name": "blunder-js-example",
+  "devDependencies": {
+    "blunder-js": "^0.1.0"
+  }
+}

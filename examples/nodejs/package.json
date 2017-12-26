@@ -1,0 +1,7 @@
+{
+  "name": "blunder-js-example",
+  "dependencies": {
+    "blunder-js": "^0.1.0",
+    "request": "^2.81.0"
+  }
+}
