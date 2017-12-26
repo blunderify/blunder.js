@@ -15,7 +15,7 @@ npm install blunder-js
 
 Example configurations can be found in [examples](examples), including:
 
-* [Angular 2](examples/angular-2)
+* [Angular 2](examples/angular2)
 * [Plain JS](examples/plainjs)
 * [Node.js](examples/nodejs)
 * [Rails](examples/rails)
