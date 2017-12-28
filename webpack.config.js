@@ -54,5 +54,4 @@ client.entry = {
 };
 client.output.library = ['blunder', 'Client'];
 
-
 module.exports = [client];

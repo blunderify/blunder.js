@@ -10,5 +10,8 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+    "examples/"
+  ]
 }

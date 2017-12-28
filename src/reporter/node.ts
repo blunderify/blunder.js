@@ -4,7 +4,8 @@ import Promise from '../promise';
 import Notice from '../notice';
 import jsonifyNotice from '../jsonify-notice';
 
-import { ReporterOptions, errors } from './reporter';
+import { errors } from './reporter';
+import { ReporterOptions } from './reporter-options.interface';
 
 let request;
 try {
