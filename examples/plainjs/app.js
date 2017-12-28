@@ -1,7 +1,8 @@
 function start() {
   var blunder = new blunderJs.Client({
     projectId: 1,
-    projectKey: 'FIXME'
+    projectKey: 'FIXME',
+    component: 'js-client'
   });
 
   blunder.notify('app started');

@@ -6,7 +6,7 @@ install blunder-js using webpacker or similar tools.
 And then place the following code into your `application.js`:
 
 ```javascript
-var blunder = new blunderJs.Client({projectId: 1, projectKey: 'FIXME'});
+var blunder = new blunderJs.Client({projectId: 1, projectKey: 'FIXME', component: 'frontend'});
 blunder.addFilter(function(notice) {
   notice.context.environment = "<%= Rails.env %>";
   return notice;

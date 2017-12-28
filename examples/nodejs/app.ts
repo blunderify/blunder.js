@@ -11,5 +11,6 @@ console.log('Server running on port 8080.');
 
 const blunder = new blunderClient({
   projectId: 1,
-  projectKey: 'FIXME'
+  projectKey: 'FIXME',
+  component: 'node-app'
 });

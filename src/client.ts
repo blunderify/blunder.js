@@ -14,7 +14,8 @@ import angularMessageFilter from './filter/angular-message';
 import windowFilter from './filter/window';
 import nodeFilter from './filter/node';
 
-import { Reporter, ReporterOptions, detectReporter } from './reporter/reporter';
+import { Reporter, detectReporter } from './reporter/reporter';
+import { ReporterOptions } from './reporter/reporter-options.interface';
 import fetchReporter from './reporter/fetch';
 import nodeReporter from './reporter/node';
 import xhrReporter from './reporter/xhr';
@@ -67,6 +68,10 @@ class Client {
 
   setHost(host: string) {
     this.opts.host = host;
+  }
+
+  setComponent(component: string) {
+    this.opts.component = component;
   }
 
   addReporter(name: string | Reporter): void {
@@ -125,6 +130,7 @@ class Client {
       context: Object.assign({
         language: 'JavaScript',
         severity: 'error',
+        component: this.opts.component,
         notifier: {
           name: 'blunder-js',
           version: VERSION,

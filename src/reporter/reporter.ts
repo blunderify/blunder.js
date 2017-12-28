@@ -1,14 +1,6 @@
 import Promise from '../promise';
 import Notice from '../notice';
-
-export interface ReporterOptions {
-    projectId: number;
-    projectKey: string;
-    host: string;
-    timeout: number;
-
-    ignoreWindowError?: boolean;
-}
+import { ReporterOptions } from './reporter-options.interface';
 
 export type Reporter = (notice: Notice, opts: ReporterOptions, promise: Promise) => void;
 export default Reporter;

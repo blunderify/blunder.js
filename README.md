@@ -35,14 +35,14 @@ npm install request
 First you need to initialize the notifier with the project id and API key taken from [Blunderify](https://app.blunderify.se):
 
 ```js
-var blunder = new blunderJs.Client({projectId: 1, projectKey: 'abc'});
+var blunder = new blunderJs.Client({projectId: 1, projectKey: 'abc', component: 'frontend'});
 ```
 
 Or if you are using browserify/webpack/etc:
 
 ```js
 var BlunderClient = require('blunder-js');
-var blunder = new BlunderClient({projectId: 1, projectKey: 'abc'});
+var blunder = new BlunderClient({projectId: 1, projectKey: 'abc', component: 'frontend'});
 ```
 
 Then you can send a textual message to Blunder:

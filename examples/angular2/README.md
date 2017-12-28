@@ -12,7 +12,8 @@ export class BlunderErrorHandler implements ErrorHandler {
   constructor() {
     this.blunder = new BlunderClient({
       projectId: 1,
-      projectKey: 'FIXME'
+      projectKey: 'FIXME',
+      component: 'Angular'
     });
   }
 
