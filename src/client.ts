@@ -38,6 +38,8 @@ class Client {
     this.opts = opts;
     this.opts.host = this.opts.host || 'https://collector.blunderify.se';
     this.opts.timeout = this.opts.timeout || 10000;
+    this.opts.component = this.opts.component || '';
+    this.opts.environment = this.opts.environment || 'production';
 
     this.processor = opts.processor || stacktracejsProcessor;
     this.addReporter(opts.reporter || detectReporter(opts));
@@ -72,6 +74,10 @@ class Client {
 
   setComponent(component: string) {
     this.opts.component = component;
+  }
+
+  setEnvironment(env: string) {
+    this.opts.environment = env;
   }
 
   addReporter(name: string | Reporter): void {
@@ -131,6 +137,7 @@ class Client {
         language: 'JavaScript',
         severity: 'error',
         component: this.opts.component,
+        environment: this.opts.environment,
         notifier: {
           name: 'blunder-js',
           version: VERSION,
