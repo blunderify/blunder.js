@@ -125,6 +125,12 @@ blunder.notify({
 });
 ```
 
+### User information
+
+To send user information to Blunder, either create [a filter](#filtering-errors) or use `setUser(userId: string, userEmail: string, userName: string)` on an instance of the `BlunderClient`. You can also use `setUserId(id: string)`, `setUserEmail(email: string)` or `setUserName(name: string)` on a client instance if you only have, or only care about one of the bits.
+
+Since Blunder mostly works with .NET and their way of doing things, the backend will prefer grouping on UserName instead of the others. If you only set one piece of user info, make it UserName.
+
 ### Filtering errors
 
 There may be some errors thrown in your application that you're not interested in sending to Blunder, such as errors thrown by 3rd-party libraries, or by browser extensions run by your users.

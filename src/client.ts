@@ -16,6 +16,7 @@ import nodeFilter from './filter/node';
 
 import { Reporter, detectReporter } from './reporter/reporter';
 import { ReporterOptions } from './reporter/reporter-options.interface';
+import { ReporterUserOptions } from './reporter/reporter-user-options.interface';
 import fetchReporter from './reporter/fetch';
 import nodeReporter from './reporter/node';
 import xhrReporter from './reporter/xhr';
@@ -78,6 +79,32 @@ class Client {
 
   setEnvironment(env: string) {
     this.opts.environment = env;
+  }
+
+  getUser(): ReporterUserOptions | undefined {
+    return this.opts.user;
+  }
+
+  setUser(userId: string, userEmail: string, userName: string): void {
+    this.opts.user = this.opts.user || {};
+    this.opts.user.id = userId;
+    this.opts.user.email = userEmail;
+    this.opts.user.name = userName;
+  }
+
+  setUserId(userId: string): void {
+    this.opts.user = this.opts.user || {};
+    this.opts.user.id = userId;
+  }
+
+  setUserName(userName: string): void {
+    this.opts.user = this.opts.user || {};
+    this.opts.user.name = userName;
+  }
+
+  setUserEmail(userEmail: string): void {
+    this.opts.user = this.opts.user || {};
+    this.opts.user.email = userEmail;
   }
 
   addReporter(name: string | Reporter): void {
@@ -148,6 +175,11 @@ class Client {
       environment: err.environment || {},
       session: err.session || {},
     };
+
+    let user = this.getUser();
+    if (user != null) {
+      notice.context.user = user;
+    }
 
     let history = getHistory();
     if (history.length > 0) {
