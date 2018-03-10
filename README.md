@@ -169,7 +169,7 @@ blunder.addFilter(function(notice) {
 
 ### Source map
 
-~~~In order to enable source map support you have to specify the path to the source map file according to the [source map specification](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.lmz475t4mvbx). For example, blunder.min.js has the following line:
+In order to enable source map support you have to specify the path to the source map file according to the [source map specification](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.lmz475t4mvbx). For example, blunder.min.js has the following line:
 
 ```js
 //# sourceMappingURL=blunder.min.js.map
@@ -188,7 +188,6 @@ blunder.addFilter(function(notice) {
   return notice;
 });
 ```
-~~~
 
 ### Custom reporters
 
