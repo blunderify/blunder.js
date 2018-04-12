@@ -1,6 +1,6 @@
 {
   "name": "blunder-js",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Notify Blunder on JavaScript exceptions",
   "author": "Blunder",
   "license": "MIT",
