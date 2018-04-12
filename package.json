@@ -27,6 +27,7 @@
     "webpack": "^3.10.0"
   },
   "main": "dist/blunder.js",
+  "types": "index.d.ts",
   "files": [
     "dist/",
     "README.md",
