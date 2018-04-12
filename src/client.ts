@@ -1,5 +1,6 @@
 import Promise from './promise';
 import Notice from './notice';
+import { BlunderOptions } from './blunder-options';
 import { BlunderError } from './blunder-error';
 import FuncWrapper from './func-wrapper';
 
@@ -35,12 +36,16 @@ class Client {
   private offline = false;
   private errors: any[] = [];
 
-  constructor(opts: any = {}) {
-    this.opts = opts;
+  constructor(opts: BlunderOptions = {}) {
+    if (opts.projectId) this.opts.projectId = opts.projectId;
+    if (opts.projectKey) this.opts.projectKey = opts.projectKey;
+    if (opts.user) this.opts.user = opts.user;
+
     this.opts.host = this.opts.host || 'https://collector.blunderify.se';
     this.opts.timeout = this.opts.timeout || 10000;
     this.opts.component = this.opts.component || '';
     this.opts.environment = this.opts.environment || 'production';
+    this.opts.ignoreWindowError = opts.ignoreWindowError;
 
     this.processor = opts.processor || stacktracejsProcessor;
     this.addReporter(opts.reporter || detectReporter(opts));
