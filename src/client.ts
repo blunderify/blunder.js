@@ -64,7 +64,7 @@ class Client {
     historian.registerNotifier(this);
   }
 
-  setProject(id: number, key: string): void {
+  setProject(id: string, key: string): void {
     this.opts.projectId = id;
     this.opts.projectKey = key;
   }

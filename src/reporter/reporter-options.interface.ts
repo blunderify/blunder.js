@@ -1,7 +1,7 @@
 import { ReporterUserOptions } from './reporter-user-options.interface';
 
 export interface ReporterOptions {
-  projectId: number;
+  projectId: string;
   projectKey: string;
   component: string;
   environment: string;
